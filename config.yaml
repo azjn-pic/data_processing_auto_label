@@ -1,0 +1,41 @@
+data:
+  input_path: "path/to/raw/data"
+  output_path: "path/to/output"
+  image_format: "jpg"
+
+detection:
+  shelf_detection_model_path: "path/to/shelf/model"
+  product_detection_model_path: "path/to/product/model"
+
+embedding:
+  batch_size: 16
+  embedding_dim: 512
+
+optimization:
+  n_trials: 100
+  algorithms:
+    - { name: "umap", parameters: {...} }
+    - { name: "pca", parameters: {...} }
+    - { name: "hdbscan", parameters: {...} }
+    - { name: "kmeans", parameters: {...} }
+
+clustering:
+  default_dim_red: "pca"
+  default_clustering: "hdbscan"
+
+noise_handling:
+  similarity_threshold: 0.8
+  max_recluster_attempts: 2
+
+default_params:
+  red_type: "pca"
+  clustering_type: "hdbscan"
+  n_components: 28,
+  n_neighbors : 15,
+  min_distance : 0.1,
+  min_cluster_size: 18,
+  min_samples: 10,
+  n_clusters: 35,
+  similarity_threshold: 0.75,
+
+opt: false
